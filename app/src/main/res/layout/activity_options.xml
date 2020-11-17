@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".OptionsActivity">
 
     <TextView
         android:id="@+id/textFontSize"
@@ -26,22 +27,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textFontSize" />
 
     <Spinner
-        android:id="@+id/spinnerFontSize"
-        android:layout_width="201dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="156dp"
-        app:layout_constraintStart_toEndOf="@+id/textFontSize"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
         android:id="@+id/spinnerFontColor"
         android:layout_width="196dp"
         android:layout_height="33dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="236dp"
         app:layout_constraintStart_toEndOf="@+id/textFontColor"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerFontSize" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonSave"
@@ -50,6 +42,7 @@
         android:layout_marginEnd="77dp"
         android:layout_marginBottom="82dp"
         android:text="SAVE"
+        android:onClick="saveState"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -59,7 +52,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="91dp"
         android:layout_marginBottom="86dp"
+        android:onClick="optionToMain"
         android:text="MAIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="189dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="149dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/textFontSize"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

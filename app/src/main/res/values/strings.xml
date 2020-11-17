@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ShoppingChart</string>
+
+    <string name="selected_item">Selected item:</string>
+
+    <string-array name="Colors">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Black</item>
+        <item>Purple</item>
+        <item>Green</item>
+    </string-array>
 </resources>
