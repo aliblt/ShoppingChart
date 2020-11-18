@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,9 @@ class OptionsActivity : AppCompatActivity() {
 
         val colors = resources.getStringArray(R.array.Colors)
 
+        var editTextSize = findViewById<EditText>(R.id.editTextNumber)
+        editTextSize.setText( sp.getFloat("text_size", 12.0F).toString() )
+
         val colorSpinner = findViewById<Spinner>(R.id.spinnerFontColor)
         if( colorSpinner != null )
             colorSpinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, colors)
@@ -32,13 +36,17 @@ class OptionsActivity : AppCompatActivity() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
+    fun setFont() {
         textFontSize.textSize = sp.getFloat( "text_size", 12.0F)
         textFontSize.setTextColor( sp.getInt("text_color", Color.RED ) )
 
         textFontColor.textSize = sp.getFloat( "text_size", 12.0F)
         textFontColor.setTextColor( sp.getInt("text_color", Color.RED ) )
+    }
+
+    override fun onStart() {
+        super.onStart()
+        setFont()
     }
 
     fun saveState(view: View) {
@@ -53,9 +61,10 @@ class OptionsActivity : AppCompatActivity() {
             "Green" -> selectedColor = Color.GREEN
         }
 
-        editor.putFloat("text_size", savedFontSize ) // TODO change constant
+        editor.putFloat("text_size", savedFontSize )
         editor.putInt("text_color", selectedColor)
         editor.apply()
+        setFont()
         Toast.makeText(baseContext, "Saved", Toast.LENGTH_SHORT).show()
     }
 
