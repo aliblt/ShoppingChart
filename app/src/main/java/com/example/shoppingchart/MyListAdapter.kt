@@ -12,7 +12,7 @@ class MyListAdapter(val context: Context, val productViewModel: ProductViewModel
     private var product = emptyList<Product>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater = LayoutInflater.from(context)
+        val inflater = LayoutInflater.from(parent.context)
         val binding = ListElementBinding.inflate(inflater)
         return ViewHolder(binding)
     }

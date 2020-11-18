@@ -17,6 +17,9 @@ class AddItemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_item)
 
+        productViewModel = ViewModelProvider( this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))
+                .get(ProductViewModel::class.java)
+
     }
 
     fun addItem(view: View) {
