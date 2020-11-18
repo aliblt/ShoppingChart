@@ -8,9 +8,9 @@
 
     <TextView
         android:id="@+id/textFontSize"
-        android:layout_width="72dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="67dp"
+        android:layout_width="95dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="155dp"
         android:text="FontSize"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,9 +18,9 @@
 
     <TextView
         android:id="@+id/textFontColor"
-        android:layout_width="68dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="67dp"
+        android:layout_width="99dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:text="FontColor"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,10 +28,10 @@
 
     <Spinner
         android:id="@+id/spinnerFontColor"
-        android:layout_width="196dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="236dp"
+        android:layout_width="194dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="256dp"
         app:layout_constraintStart_toEndOf="@+id/textFontColor"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,10 +39,10 @@
         android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="77dp"
-        android:layout_marginBottom="82dp"
-        android:text="SAVE"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="84dp"
         android:onClick="saveState"
+        android:text="SAVE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -50,8 +50,8 @@
         android:id="@+id/buttonToMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="91dp"
-        android:layout_marginBottom="86dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="84dp"
         android:onClick="optionToMain"
         android:text="MAIN"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,10 +59,10 @@
 
     <EditText
         android:id="@+id/editTextNumber"
-        android:layout_width="189dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="149dp"
+        android:layout_width="181dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="152dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/textFontSize"

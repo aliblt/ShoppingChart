@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="96dp"
+        android:layout_height="43dp"
         android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -20,11 +20,22 @@
         android:id="@+id/options_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="68dp"
         android:onClick="mainToOption"
         android:text="Options"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonProductList"
+        android:layout_width="107dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="56dp"
+        android:onClick="mainToProductList"
+        android:text="Product List"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

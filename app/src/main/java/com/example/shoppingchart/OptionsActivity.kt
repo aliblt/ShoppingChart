@@ -19,7 +19,7 @@ class OptionsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_options)
-        sp = getPreferences(Context.MODE_PRIVATE)
+        sp = getSharedPreferences("shopping_chart_pref", Context.MODE_PRIVATE )
         editor = sp.edit()
 
         val colors = resources.getStringArray(R.array.Colors)
@@ -27,6 +27,8 @@ class OptionsActivity : AppCompatActivity() {
         val colorSpinner = findViewById<Spinner>(R.id.spinnerFontColor)
         if( colorSpinner != null )
             colorSpinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, colors)
+
+        colorSpinner.setSelection(0)
 
     }
 
@@ -40,13 +42,24 @@ class OptionsActivity : AppCompatActivity() {
     }
 
     fun saveState(view: View) {
-        editor.putFloat("text_size", 12.0F) // TODO change constant
-        editor.putInt("text_color", Color.RED)
+        val savedFontSize = editTextNumber.text.toString().toFloat()
+        var selectedColor = Color.BLACK
+
+        when( spinnerFontColor.selectedItem.toString() ) {
+            "Red" -> selectedColor = Color.RED
+            "Blue" -> selectedColor = Color.BLUE
+            "Black" -> selectedColor = Color.BLACK
+            "Purple"  -> selectedColor = 0xFF6200EE.toInt()
+            "Green" -> selectedColor = Color.GREEN
+        }
+
+        editor.putFloat("text_size", savedFontSize ) // TODO change constant
+        editor.putInt("text_color", selectedColor)
         editor.apply()
         Toast.makeText(baseContext, "Saved", Toast.LENGTH_SHORT).show()
     }
 
     fun optionToMain(view: View) {
-
+        finish()
     }
 }
