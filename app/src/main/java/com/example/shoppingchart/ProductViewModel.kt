@@ -18,4 +18,6 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
     fun insert(product: Product) = repo.insert(product)
 
     fun delete(product: Product) = repo.delete(product)
+
+    fun update(product: Product) = repo.update(product)
 }

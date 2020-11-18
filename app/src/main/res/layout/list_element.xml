@@ -49,7 +49,6 @@
             android:id="@+id/cbIsPurchesed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="75dp"
             android:text="Is Purchesed" />
 
         <Button
@@ -57,7 +56,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="RMV" />
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="20dp"
+            android:text="REMOVE" />
+
+        <Button
+            android:id="@+id/bModify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modify"/>
 
     </LinearLayout>
     <View

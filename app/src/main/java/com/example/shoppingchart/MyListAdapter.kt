@@ -27,6 +27,11 @@ class MyListAdapter(val context: Context, val productViewModel: ProductViewModel
             productViewModel.delete(currentProduct)
             Toast.makeText(context, "Person with id: ${currentProduct.id} is removed!", Toast.LENGTH_SHORT).show()
         }
+        holder.binding.bModify.setOnClickListener{
+            currentProduct.isPurchased = holder.binding.cbIsPurchesed.isChecked
+            productViewModel.update(currentProduct)
+            Toast.makeText(context, "Person with id: ${currentProduct.id} is modified!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int = product.size

@@ -13,4 +13,8 @@ class ProductRepo(private val productDao: ProductDao) {
     fun delete(product: Product) {
         productDao.delete(product)
     }
+
+    fun update(product: Product) {
+        productDao.update(product)
+    }
 }
