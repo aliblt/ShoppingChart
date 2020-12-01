@@ -6,15 +6,15 @@ class ProductRepo(private val productDao: ProductDao) {
 
     val listofProduct: LiveData<List<Product>> = productDao.getProduct()
 
-    fun insert(product: Product) {
+    suspend fun insert(product: Product) {
         productDao.insert(product)
     }
 
-    fun delete(product: Product) {
+    suspend fun delete(product: Product) {
         productDao.delete(product)
     }
 
-    fun update(product: Product) {
+    suspend fun update(product: Product) {
         productDao.update(product)
     }
 }

@@ -2,6 +2,7 @@
     <string name="app_name">ShoppingChart</string>
 
     <string name="selected_item">Selected item:</string>
+    <string name="broadcast">com.examples.shoppingchart.MY_BROADCAST</string>
 
     <string-array name="Colors">
         <item>Red</item>
