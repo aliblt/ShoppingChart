@@ -1,13 +1,17 @@
 package com.example.shoppingchart
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppingchart.databinding.ListElementBinding
+import kotlin.concurrent.thread
 
-class MyListAdapter(val context: Context, val productViewModel: ProductViewModel): RecyclerView.Adapter<MyListAdapter.ViewHolder>() {
+class MyListAdapter(val context: Context, val productViewModel: ProductViewModel, private val notifiedItem: String?): RecyclerView.Adapter<MyListAdapter.ViewHolder>() {
 
     private var product = emptyList<Product>()
 
@@ -19,6 +23,8 @@ class MyListAdapter(val context: Context, val productViewModel: ProductViewModel
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentProduct = product[position]
+        if ( notifiedItem != null && currentProduct.name == notifiedItem )
+            setBackground(holder)
         holder.binding.tvProductName.text = currentProduct.name
         holder.binding.tvPrice.text = currentProduct.price.toString()
         holder.binding.tvQuantity.text = currentProduct.quantity.toString()
@@ -41,5 +47,16 @@ class MyListAdapter(val context: Context, val productViewModel: ProductViewModel
     fun setProduct(product: List<Product>){
         this.product = product
         notifyDataSetChanged()
+    }
+
+    @SuppressLint("ResourceAsColor")
+    fun setBackground(holder: ViewHolder){
+        holder.itemView.setBackgroundColor(R.color.purple_200);
+        // thread(start = true) {}
+        Thread( Runnable {
+            Thread.sleep(5000L)
+            holder.itemView.setBackgroundColor(R.color.white)
+            Log.v("Thread", "Ended")
+        }).start()
     }
 }

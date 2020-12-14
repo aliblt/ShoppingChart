@@ -2,7 +2,9 @@
     <string name="app_name">ShoppingChart</string>
 
     <string name="selected_item">Selected item:</string>
-    <string name="broadcast">com.examples.shoppingchart.MY_BROADCAST</string>
+    <string name="broadcast">com.examples.broadcast.MY_BROADCAST</string>
+    <string name="channel_id">channel_AP</string>
+    <string name="channel_name">AddProduct</string>
 
     <string-array name="Colors">
         <item>Red</item>
