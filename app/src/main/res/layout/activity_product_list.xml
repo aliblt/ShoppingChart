@@ -8,6 +8,24 @@
     android:layout_height="match_parent"
     tools:context=".ProductListActivity">
 
+    <TextView
+        android:id="@+id/tv_private_products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/private_products" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_private"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_shared_products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/shared_products" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv1"
         android:layout_width="match_parent"

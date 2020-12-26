@@ -33,15 +33,14 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    fun String.toEditable(): Editable =  Editable.Factory.getInstance().newEditable(this)
-
     fun login(view: View)
     {
+        val inMainActivity = Intent(this, MainActivity::class.java)
         auth.signInWithEmailAndPassword(etUName.text.toString(), etPass.text.toString())
             .addOnCompleteListener {
                 if(it.isSuccessful){
                     Toast.makeText(this, "Login is successful", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(inMainActivity)
                 }
                 else{
                     Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show()

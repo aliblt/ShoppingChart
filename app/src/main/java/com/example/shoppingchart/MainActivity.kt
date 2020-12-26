@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -33,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         tv1.setTextColor( sp.getInt("text_color", Color.BLACK) )
     }
 
-
     fun mainToOption(view: View) {
         val intent = Intent( baseContext, OptionsActivity::class.java)
         startActivity(intent)
@@ -42,6 +43,11 @@ class MainActivity : AppCompatActivity() {
     fun mainToProductList(view: View) {
         val intent = Intent( baseContext, ProductListActivity::class.java)
         startActivity(intent)
+    }
+
+    fun logOut(view: View) {
+        FirebaseAuth.getInstance().signOut()
+        finish()
     }
 
 }

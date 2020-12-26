@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class Product( var name:String, var price: Double, var quantity: Int, var isPurchased: Boolean ) {
 
-    @PrimaryKey(autoGenerate = true)
-    var id: Long = 0
+    @PrimaryKey(autoGenerate = false)
+    var id: String = ""
+
 }
