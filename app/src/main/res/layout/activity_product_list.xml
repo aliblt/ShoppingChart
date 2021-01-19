@@ -9,7 +9,7 @@
     tools:context=".ProductListActivity">
 
     <TextView
-        android:id="@+id/tv_private_products"
+        android:id="@+id/tv_private"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/private_products" />
